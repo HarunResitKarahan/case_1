@@ -41,7 +41,7 @@
   display: flex;
   position: absolute;
   justify-content: center;
-  cursor: pointer;
+  /* cursor: pointer; */
   top: -999px;
   transition: top 0.7s;
   width: 100%;
@@ -67,10 +67,15 @@
   padding: 5px;
 }
 .container .winnerPopUp .popUpContainer .popUpContainerHeader {
+  display: flex;
+  align-items: center;
   border: 1px solid white;
   border-top-width: 0;
   border-left-width: 0;
   border-right-width: 0;
+}
+.container .winnerPopUp .popUpContainer .popUpContainerHeader svg {
+  height: calc(5px + 2vmin);
 }
 .container .winnerPopUp .popUpContainer .replay {
   background-color: #277474;

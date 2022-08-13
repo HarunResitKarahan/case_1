@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useState, useEffect, useRef  } from 'react';
+import { GiCrown } from 'react-icons/gi';
 
 function App() {
   const [whoIsTurn, setWhoIsTurn] = useState('player1')
@@ -71,12 +72,12 @@ function App() {
       }
     }
   }
-  const hidePopUp = (event) => {
-    if (event.target.className === 'winnerPopUp') {
-      event.target.style.display = 'none'
-      document.location.reload()
-    }
-  }
+  // const hidePopUp = (event) => {
+  //   if (event.target.className === 'winnerPopUp') {
+  //     event.target.style.display = 'none'
+  //     document.location.reload()
+  //   }
+  // }
   const reloadPage = () => {
     document.location.reload()
   }
@@ -89,10 +90,11 @@ function App() {
             return <div className='game-item' id={item} key={item} onClick={playGame}></div>
           })}
         </div>
-        <div className='winnerPopUp' onClick={hidePopUp}>
+        <div className='winnerPopUp'>
           <div className='popUpContainer'>
             <div className='popUpContainerHeader'>
-              <span>{winner}</span>
+              {winner === 'Berabere' ? null : <GiCrown/>}
+              <span style={{marginLeft: '5px'}}>{winner}</span>
             </div>
             <div className='replay' onClick={reloadPage}>
               <p>Tekrar Oyna</p>
