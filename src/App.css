@@ -56,7 +56,7 @@
   height: fit-content;
   cursor: default;
   margin-top: 7%;
-  width: 300px;
+  width: fit-content;
   padding: 2vw;
   border-radius: 2px;
   font-size: calc(5px + 2vmin);

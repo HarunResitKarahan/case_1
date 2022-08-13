@@ -25,9 +25,9 @@ function App() {
         })
         if (player1MovesCounter.current === 3) {
           isFinished = true
-          setWinner('Kullanıcı 1 Kazandı.')
+          setWinner('Kullanıcı 1(X) Kazandı.')
           document.querySelector(".winnerPopUp").style.top = '0'
-          console.log("Oyun Bitti Player1 Kazandı.")
+          console.log("Oyun Bitti Kullanıcı 1(X) Kazandı.")
         }
       })
       // console.log("Player1: " + player1Moves.sort())
@@ -42,9 +42,9 @@ function App() {
         })
         if (player2MovesCounter.current === 3) {
           isFinished = true
-          setWinner('Kullanıcı 2 Kazandı.')
+          setWinner('Kullanıcı 2(O) Kazandı')
           document.querySelector(".winnerPopUp").style.top = '0'
-          console.log("Oyun Bitti Player2 Kazandı.")
+          console.log("Oyun Bitti Player2(O) Kazandı.")
         }
       })
       // console.log("Player2: " +player2Moves.sort())
@@ -84,7 +84,11 @@ function App() {
   return (
     <div className="App">
       <div className="container">
+        {winner === '' ? 
         <div className='showplayer'>Oyun Sırası {whoIsTurn === 'player1' ? 'Kullanıcı 1\'de(X)':'Kullanıcı 2\'de(O)'}</div>
+        : 
+        <div className='showplayer'>Oyun Bitti</div>
+        }
         <div className="game">
           {Array.from(Array(9), (e, item) => {
             return <div className='game-item' id={item} key={item} onClick={playGame}></div>
